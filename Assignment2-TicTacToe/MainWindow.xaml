@@ -5,8 +5,50 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Assignment2_TicTacToe"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Tic Tac Toe" Height="875" Width="1000">
     <Grid>
-        
+        <!-- Column Definitions -->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.5*"/>
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition Width="2*"/>
+
+        </Grid.ColumnDefinitions>
+
+        <!-- Row Definitions -->
+        <!--  <RowDefinition Height="0.5*" /> -->
+        <Grid.RowDefinitions>
+            <RowDefinition  Height="0.5*" />
+            <RowDefinition  Height="0.5*" />
+            <RowDefinition  Height="0.5*" />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition Height="0.5*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Tic Tac Toe Buttons -->
+        <Button Grid.Column="1" Grid.Row="3" Name="slot00" FontSize="100" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" ToolTip="Slot 0" KeyboardNavigation.TabIndex="1" IsDefault="True" BorderThickness="5,5,5,5" Click="Button_Click"/>
+        <Button Grid.Column="2" Grid.Row="3" Name="slot01" FontSize="100" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" ToolTip="Slot 0" KeyboardNavigation.TabIndex="1" IsDefault="True" BorderThickness="5,5,5,5" Click="Button_Click"/>
+        <Button Grid.Column="3" Grid.Row="3" Name="slot02" FontSize="100" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" ToolTip="Slot 0" KeyboardNavigation.TabIndex="1" IsDefault="True" BorderThickness="5,5,5,5" Click="Button_Click"/>
+        <Button Grid.Column="1" Grid.Row="4" Name="slot10" FontSize="100" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" ToolTip="Slot 0" KeyboardNavigation.TabIndex="1" IsDefault="True" BorderThickness="5,5,5,5" Click="Button_Click"/>
+        <Button Grid.Column="2" Grid.Row="4" Name="slot11" FontSize="100" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" ToolTip="Slot 0" KeyboardNavigation.TabIndex="1" IsDefault="True" BorderThickness="5,5,5,5" Click="Button_Click"/>
+        <Button Grid.Column="3" Grid.Row="4" Name="slot12" FontSize="100" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" ToolTip="Slot 0" KeyboardNavigation.TabIndex="1" IsDefault="True" BorderThickness="5,5,5,5" Click="Button_Click"/>
+        <Button Grid.Column="1" Grid.Row="5" Name="slot20" FontSize="100" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" ToolTip="Slot 0" KeyboardNavigation.TabIndex="1" IsDefault="True" BorderThickness="5,5,5,5" Click="Button_Click"/>
+        <Button Grid.Column="2" Grid.Row="5" Name="slot21" FontSize="100" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" ToolTip="Slot 0" KeyboardNavigation.TabIndex="1" IsDefault="True" BorderThickness="5,5,5,5" Click="Button_Click"/>
+        <Button Grid.Column="3" Grid.Row="5" Name="slot22" FontSize="100" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" ToolTip="Slot 0" KeyboardNavigation.TabIndex="1" IsDefault="True" BorderThickness="5,5,5,5" Click="Button_Click"/>
+        <Label Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="3" Name="ticTacToeTitle" Content="Tic Tac Toe" FontSize="60" HorizontalAlignment="Center"/>
+        <Label Grid.Column="1" Grid.Row="2" Name="currentPlayerLabel" FontSize="20" Content="Current Player:" VerticalAlignment="Center"  HorizontalAlignment="Left" Grid.ColumnSpan="2" Margin="178,0,0,0" />
+        <TextBox Grid.Column="2" Grid.Row="2" Name="currentPlayerTextBox" Text="X" FontSize="35" HorizontalAlignment="Left" Margin="136,0,0,0" TextWrapping="Wrap" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="50" VerticalAlignment="Center" Height="50" Grid.ColumnSpan="2"/>
+
+
+        <Label Grid.Column="1" Grid.Row="1" Name="xPlayerNameLabel" Content="Player X Name:" FontSize="20" VerticalAlignment="Top"  HorizontalAlignment="Center" Margin="0,5,0,0" />
+        <TextBox Grid.Column="1" Grid.Row="1" Name="xPlayerNameTextBox" HorizontalAlignment="Center" Margin="0,47,0,0" TextWrapping="Wrap" VerticalAlignment="Top" VerticalContentAlignment="Center" Width="162" Height="29" Text="Placeholder"/>
+
+        <Label Grid.Column="3" Grid.Row="1" Name="yPlayerNameLabel" Content="Player Y Name:" FontSize="20" VerticalAlignment="Top"  HorizontalAlignment="Center" Margin="0,5,0,0" />
+        <TextBox Grid.Column="3" Grid.Row="1" Name="yPlayerNameTextBox" HorizontalAlignment="Center" Margin="0,47,0,0" TextWrapping="Wrap" VerticalAlignment="Top" VerticalContentAlignment="Center" Width="162" Height="29" Text="Placeholder"/>
+
     </Grid>
 </Window>
