@@ -1,11 +1,13 @@
 ﻿<Window x:Class="Assignment2_TicTacToe.MainWindow"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Assignment2_TicTacToe"
         mc:Ignorable="d"
-        Title="Tic Tac Toe" Height="875" Width="850">
+        Title="Tic Tac Toe" Height="875" Width="925">
     <Grid>
         <!-- Column Definitions -->
         <Grid.ColumnDefinitions>
@@ -14,6 +16,7 @@
             <ColumnDefinition />
             <ColumnDefinition />
             <ColumnDefinition Width="1.5*"/>
+            <ColumnDefinition Width="0.5*"/>
 
         </Grid.ColumnDefinitions>
 
@@ -33,46 +36,48 @@
         <Label Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="3" Name="ticTacToeTitle" Content="Tic Tac Toe" FontSize="60" HorizontalAlignment="Center" FontWeight="Bold"/>
 
         <!-- Tic Tac Toe Buttons -->
-        <Button Grid.Column="1" Grid.Row="3" Name="slot00" FontSize="100" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" ToolTip="Slot 0" KeyboardNavigation.TabIndex="1" IsDefault="True" BorderThickness="5,5,5,5" Click="Button_Click"/>
-        <Button Grid.Column="2" Grid.Row="3" Name="slot01" FontSize="100" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" ToolTip="Slot 0" KeyboardNavigation.TabIndex="1" IsDefault="True" BorderThickness="5,5,5,5" Click="Button_Click"/>
-        <Button Grid.Column="3" Grid.Row="3" Name="slot02" FontSize="100" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" ToolTip="Slot 0" KeyboardNavigation.TabIndex="1" IsDefault="True" BorderThickness="5,5,5,5" Click="Button_Click"/>
-        <Button Grid.Column="1" Grid.Row="4" Name="slot10" FontSize="100" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" ToolTip="Slot 0" KeyboardNavigation.TabIndex="1" IsDefault="True" BorderThickness="5,5,5,5" Click="Button_Click"/>
-        <Button Grid.Column="2" Grid.Row="4" Name="slot11" FontSize="100" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" ToolTip="Slot 0" KeyboardNavigation.TabIndex="1" IsDefault="True" BorderThickness="5,5,5,5" Click="Button_Click"/>
-        <Button Grid.Column="3" Grid.Row="4" Name="slot12" FontSize="100" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" ToolTip="Slot 0" KeyboardNavigation.TabIndex="1" IsDefault="True" BorderThickness="5,5,5,5" Click="Button_Click"/>
-        <Button Grid.Column="1" Grid.Row="5" Name="slot20" FontSize="100" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" ToolTip="Slot 0" KeyboardNavigation.TabIndex="1" IsDefault="True" BorderThickness="5,5,5,5" Click="Button_Click"/>
-        <Button Grid.Column="2" Grid.Row="5" Name="slot21" FontSize="100" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" ToolTip="Slot 0" KeyboardNavigation.TabIndex="1" IsDefault="True" BorderThickness="5,5,5,5" Click="Button_Click"/>
-        <Button Grid.Column="3" Grid.Row="5" Name="slot22" FontSize="100" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" ToolTip="Slot 0" KeyboardNavigation.TabIndex="1" IsDefault="True" BorderThickness="5,5,5,5" Click="Button_Click"/>
+        <Button Grid.Column="1" Grid.Row="3" Name="slot00" FontSize="100" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" ToolTip="Space 1" KeyboardNavigation.TabIndex="3" IsDefault="True" BorderThickness="5,5,5,5" Click="ButtonClick" />
+        <Button Grid.Column="2" Grid.Row="3" Name="slot01" FontSize="100" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" ToolTip="Space 2" KeyboardNavigation.TabIndex="4" IsDefault="True" BorderThickness="5,5,5,5" Click="ButtonClick"/>
+        <Button Grid.Column="3" Grid.Row="3" Name="slot02" FontSize="100" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" ToolTip="Space 3" KeyboardNavigation.TabIndex="5" IsDefault="True" BorderThickness="5,5,5,5" Click="ButtonClick"/>
+        <Button Grid.Column="1" Grid.Row="4" Name="slot10" FontSize="100" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" ToolTip="Space 4" KeyboardNavigation.TabIndex="6" IsDefault="True" BorderThickness="5,5,5,5" Click="ButtonClick"/>
+        <Button Grid.Column="2" Grid.Row="4" Name="slot11" FontSize="100" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" ToolTip="Space 5" KeyboardNavigation.TabIndex="7" IsDefault="True" BorderThickness="5,5,5,5" Click="ButtonClick"/>
+        <Button Grid.Column="3" Grid.Row="4" Name="slot12" FontSize="100" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" ToolTip="Space 6" KeyboardNavigation.TabIndex="8" IsDefault="True" BorderThickness="5,5,5,5" Click="ButtonClick"/>
+        <Button Grid.Column="1" Grid.Row="5" Name="slot20" FontSize="100" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" ToolTip="Space 7" KeyboardNavigation.TabIndex="9" IsDefault="True" BorderThickness="5,5,5,5" Click="ButtonClick"/>
+        <Button Grid.Column="2" Grid.Row="5" Name="slot21" FontSize="100" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" ToolTip="Space 8" KeyboardNavigation.TabIndex="10" IsDefault="True" BorderThickness="5,5,5,5" Click="ButtonClick"/>
+        <Button Grid.Column="3" Grid.Row="5" Name="slot22" FontSize="100" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" ToolTip="Space 9" KeyboardNavigation.TabIndex="11" IsDefault="True" BorderThickness="5,5,5,5" Click="ButtonClick"/>
 
         <!-- Current Player -->
         <Label Grid.Column="1" Grid.Row="2" Name="currentPlayerLabel" FontSize="20" Content="Current Player:" VerticalAlignment="Center"  HorizontalAlignment="Left" Grid.ColumnSpan="2" Margin="158,0,0,0"/>
-        <TextBox Grid.Column="2" Grid.Row="2" Name="currentPlayerTextBox" Text="X" FontSize="35" HorizontalAlignment="Left" Margin="132,0,0,0" TextWrapping="Wrap" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="50" VerticalAlignment="Center" Height="50" Grid.ColumnSpan="2" IsReadOnly="True"/>
+        <TextBox Grid.Column="2" Grid.Row="2" Name="currentPlayerTextBox" Text="X" FontSize="35" HorizontalAlignment="Left" Margin="132,0,0,0" TextWrapping="Wrap" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="50" VerticalAlignment="Center" Height="50" Grid.ColumnSpan="2" IsReadOnly="True" KeyboardNavigation.TabIndex="2" ToolTip="Current player's turn" />
 
         <!-- X Player -->
         <Label Grid.Column="1" Grid.Row="1" Name="xPlayerNameLabel" Content="Player X Name:" FontSize="20" VerticalAlignment="Top"  HorizontalAlignment="Center" Margin="0,5,0,0"/>
-        <TextBox Grid.Column="1" Grid.Row="1" Name="xPlayerNameTextBox" HorizontalAlignment="Center" Margin="0,47,0,0" TextWrapping="Wrap" VerticalAlignment="Top" VerticalContentAlignment="Center" Width="162" Height="29"/>
+        <TextBox Grid.Column="1" Grid.Row="1" Name="xPlayerNameTextBox" HorizontalAlignment="Center" Margin="0,47,0,0" TextWrapping="Wrap" VerticalAlignment="Top" VerticalContentAlignment="Center" Width="160" Height="30" KeyboardNavigation.TabIndex="0" ToolTip="Enter a name for player X"/>
 
         <!-- Y Player -->
         <Label Grid.Column="3" Grid.Row="1" Name="oPlayerNameLabel" Content="Player O Name:" FontSize="20" VerticalAlignment="Top"  HorizontalAlignment="Center" Margin="0,5,0,0"/>
-        <TextBox Grid.Column="3" Grid.Row="1" Name="oPlayerNameTextBox" HorizontalAlignment="Center" Margin="0,47,0,0" TextWrapping="Wrap" VerticalAlignment="Top" VerticalContentAlignment="Center" Width="162" Height="29"/>
+        <TextBox Grid.Column="3" Grid.Row="1" Name="oPlayerNameTextBox" HorizontalAlignment="Center" Margin="0,47,0,0" TextWrapping="Wrap" VerticalAlignment="Top" VerticalContentAlignment="Center" Width="160" Height="30" KeyboardNavigation.TabIndex="1" ToolTip="Enter a name for player O"/>
 
         <!-- Scores -->
         <Label Grid.Column="4" Grid.Row="3" Name="scoreLabel" Content="Scores:" FontSize="20" VerticalAlignment="Top"  HorizontalAlignment="Left" FontWeight="Bold" Margin="87,5,0,0"/>
 
         <!-- X Score-->
         <Label Grid.Column="4" Grid.Row="3" Name="xScoreLabel" Content="X" FontSize="20" VerticalAlignment="Top"  HorizontalAlignment="Left" HorizontalContentAlignment="Left" Margin="10,43,0,0" Width="50"/>
-        <TextBox Grid.Column="4" Grid.Row="3" HorizontalAlignment="Left" Name="xScoreTextBox" FontSize="20" Margin="65,43,0,0" TextWrapping="Wrap" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Text="0" VerticalAlignment="Top" Width="177" Height="36" IsReadOnly="True"/>
+        <TextBox Grid.Column="4" Grid.Row="3" HorizontalAlignment="Left" Name="xScoreTextBox" FontSize="20" Margin="65,43,0,0" TextWrapping="Wrap" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Text="0" VerticalAlignment="Top" Width="177" Height="36" IsReadOnly="True" KeyboardNavigation.TabIndex="13" ToolTip="Player X's score"/>
 
         <!-- Y Score-->
         <Label Grid.Column="4" Grid.Row="3" Name="oScoreLabel" Content="O" FontSize="20" VerticalAlignment="Top"  HorizontalAlignment="Left" HorizontalContentAlignment="Left" Margin="10,84,0,0" Width="50"/>
-        <TextBox Grid.Column="4" Grid.Row="3" HorizontalAlignment="Left" Name="oScoreTextBox" FontSize="20" Margin="65,84,0,0" TextWrapping="Wrap" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Text="0" VerticalAlignment="Top" Width="177" Height="36" IsReadOnly="True"/>
+        <TextBox Grid.Column="4" Grid.Row="3" HorizontalAlignment="Left" Name="oScoreTextBox" FontSize="20" Margin="65,84,0,0" TextWrapping="Wrap" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Text="0" VerticalAlignment="Top" Width="177" Height="36" IsReadOnly="True" KeyboardNavigation.TabIndex="14" ToolTip="Player O's score"/>
 
         <!-- Tie Score-->
         <Label Grid.Column="4" Grid.Row="3" Name="tieScoreLabel_Copy" Content="Tie" FontSize="20" VerticalAlignment="Top"  HorizontalAlignment="Left" HorizontalContentAlignment="Left" Margin="10,125,0,0" Width="50"/>
-        <TextBox Grid.Column="4" Grid.Row="3" HorizontalAlignment="Left" Name="tieScoreTextBox" FontSize="20" Margin="65,125,0,0" TextWrapping="Wrap" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Text="0" VerticalAlignment="Top" Width="177" Height="36" IsReadOnly="True"/>
+        <TextBox Grid.Column="4" Grid.Row="3" HorizontalAlignment="Left" Name="tieScoreTextBox" FontSize="20" Margin="65,125,0,0" TextWrapping="Wrap" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Text="0" VerticalAlignment="Top" Width="177" Height="36" IsReadOnly="True" KeyboardNavigation.TabIndex="15" ToolTip="Number of ties"/>
 
         <!-- Misc Buttons -->
-        <Button Grid.Column="4"  Grid.Row="5" Content="Button" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.328,0.487" Width="235" Height="60"/>
-        
+        <Button Grid.Column="4" Grid.Row="5" Name="resetButton" Content="Reset" FontSize="20" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" Width="235" Height="70" Click="ResetButton_Click" KeyboardNavigation.TabIndex="16" ToolTip="Reset the game"/>
+        <Button Grid.Column="4" Grid.Row="5" Name="exitButton" Content="Exit" FontSize="20" HorizontalAlignment="Center" Margin="0,90,0,0" VerticalAlignment="Top" Width="235" Height="70" Click="ExitButton_Click" KeyboardNavigation.TabIndex="17" ToolTip="Exit the game"/>
+        <Button Grid.Column="4" Grid.Row="1" Name="changePlayerButton" Content="Change Starting Player" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" Width="235" Height="70" Click="ChangePlayerButton_Click" KeyboardNavigation.TabIndex="12" ToolTip="Switch the starting player"/>
+
 
 
     </Grid>

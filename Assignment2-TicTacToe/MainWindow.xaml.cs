@@ -38,7 +38,10 @@ namespace Assignment2_TicTacToe
         /// <summary>
         /// Decides who starts first
         /// </summary>
-        /// <returns></returns>
+        /// <returns>
+        /// 0 = X
+        /// 1 = O
+        /// </returns>
         private static string Random()
         {
 
@@ -143,7 +146,7 @@ namespace Assignment2_TicTacToe
             {
 
                 // Informs the game ends with a tie
-                MessageBox.Show("The game ended with a tie", "Tie");
+                MessageBox.Show("The game has ended with a tie.", "Tie");
 
                 // Increments Tie Score by 1
                 tieScore++;
@@ -153,7 +156,9 @@ namespace Assignment2_TicTacToe
             }
 
         }
-
+        /// <summary>
+        /// Clears the grid
+        /// </summary>
         private void Clear()
         {
 
@@ -271,8 +276,11 @@ namespace Assignment2_TicTacToe
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void ButtonClick(object sender, RoutedEventArgs e)
         {
+
+            // Disables the Change Starting Player button
+            changePlayerButton.IsEnabled = false;
 
             // Determines which button got clicked
             Button clickedButton = sender as Button;
@@ -303,7 +311,7 @@ namespace Assignment2_TicTacToe
                 // Sends either X or O to DeclareWinner()
                 DeclareWinner(currentPlayer);
 
-                // Clear all 9 buttons
+                // Clears all 9 buttons
                 Clear();
 
             } else if (CheckWinner(boardGame) == 2) // No one Wins
@@ -312,9 +320,60 @@ namespace Assignment2_TicTacToe
                 // Sends either X or O to DeclareWinner()
                 DeclareWinner("Tie");
 
-                // Clear all 9 buttons
+                // Clears all 9 buttons
                 Clear();
             }
+
+            // Changes the current player
+            currentPlayer = Turn(currentPlayer);
+            currentPlayerTextBox.Text = currentPlayer;
+
+        }
+
+        /// <summary>
+        /// Reset Button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ResetButton_Click(object sender, RoutedEventArgs e)
+        {
+
+            // Clears all 9 buttons
+            Clear();
+
+            // Resets all scores back to 0
+            player1Score = 0;
+            player2Score = 0;
+            tieScore = 0;
+
+            // Sets all scores back to 0
+            xScoreTextBox.Text = 0.ToString();
+            oScoreTextBox.Text = 0.ToString();
+            tieScoreTextBox.Text = 0.ToString();
+
+            // Enables the Change Starting Player Button
+            changePlayerButton.IsEnabled = true;
+        }
+
+        /// <summary>
+        /// Exit Button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ExitButton_Click(object sender, RoutedEventArgs e)
+        {
+
+            // Closes the program
+            Close();
+        }
+
+        /// <summary>
+        /// Switch Player Button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ChangePlayerButton_Click(object sender, RoutedEventArgs e)
+        {
 
             // Changes the current player
             currentPlayer = Turn(currentPlayer);
