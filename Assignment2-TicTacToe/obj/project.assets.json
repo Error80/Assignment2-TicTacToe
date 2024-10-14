@@ -8,19 +8,19 @@
     "net8.0-windows7.0": []
   },
   "packageFolders": {
-    "C:\\Users\\Nino\\.nuget\\packages\\": {}
+    "C:\\Users\\Anton\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Nino\\source\\repos\\Assignment2-TicTacToe\\Assignment2-TicTacToe\\Assignment2-TicTacToe.csproj",
+      "projectUniqueName": "C:\\Users\\Anton\\Documents\\GitHub\\Assignment2-TicTacToe\\Assignment2-TicTacToe\\Assignment2-TicTacToe.csproj",
       "projectName": "Assignment2-TicTacToe",
-      "projectPath": "C:\\Users\\Nino\\source\\repos\\Assignment2-TicTacToe\\Assignment2-TicTacToe\\Assignment2-TicTacToe.csproj",
-      "packagesPath": "C:\\Users\\Nino\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Nino\\source\\repos\\Assignment2-TicTacToe\\Assignment2-TicTacToe\\obj\\",
+      "projectPath": "C:\\Users\\Anton\\Documents\\GitHub\\Assignment2-TicTacToe\\Assignment2-TicTacToe\\Assignment2-TicTacToe.csproj",
+      "packagesPath": "C:\\Users\\Anton\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Anton\\Documents\\GitHub\\Assignment2-TicTacToe\\Assignment2-TicTacToe\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Nino\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Anton\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -28,7 +28,6 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -70,7 +69,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
