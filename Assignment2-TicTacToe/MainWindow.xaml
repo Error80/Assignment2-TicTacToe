@@ -1,4 +1,9 @@
-﻿<Window x:Class="Assignment2_TicTacToe.MainWindow"
+﻿<!-- 
+    Program: Tic Tac Toe
+    Name: Antonino Tancinco
+    Date: September October 14 2024
+-->
+<Window x:Class="Assignment2_TicTacToe.MainWindow"
         WindowStartupLocation="CenterScreen"
         ResizeMode="NoResize"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
@@ -74,9 +79,9 @@
         <TextBox Grid.Column="4" Grid.Row="3" HorizontalAlignment="Left" Name="tieScoreTextBox" FontSize="20" Margin="65,125,0,0" TextWrapping="Wrap" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Text="0" VerticalAlignment="Top" Width="177" Height="36" IsReadOnly="True" KeyboardNavigation.TabIndex="15" ToolTip="Number of ties"/>
 
         <!-- Misc Buttons -->
-        <Button Grid.Column="4" Grid.Row="5" Name="resetButton" Content="Reset" FontSize="20" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" Width="235" Height="70" Click="ResetButton_Click" KeyboardNavigation.TabIndex="16" ToolTip="Reset the game"/>
-        <Button Grid.Column="4" Grid.Row="5" Name="exitButton" Content="Exit" FontSize="20" HorizontalAlignment="Center" Margin="0,90,0,0" VerticalAlignment="Top" Width="235" Height="70" Click="ExitButton_Click" KeyboardNavigation.TabIndex="17" ToolTip="Exit the game"/>
-        <Button Grid.Column="4" Grid.Row="1" Name="changePlayerButton" Content="Change Starting Player" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" Width="235" Height="70" Click="ChangePlayerButton_Click" KeyboardNavigation.TabIndex="12" ToolTip="Switch the starting player"/>
+        <Button Grid.Column="4" Grid.Row="5" Name="resetButton" Content="Reset" FontSize="20" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" Width="235" Height="70" Click="ResetButtonClick" KeyboardNavigation.TabIndex="16" ToolTip="Reset the game"/>
+        <Button Grid.Column="4" Grid.Row="5" Name="exitButton" Content="Exit" FontSize="20" HorizontalAlignment="Center" Margin="0,90,0,0" VerticalAlignment="Top" Width="235" Height="70" Click="ExitButtonClick" KeyboardNavigation.TabIndex="17" ToolTip="Exit the game"/>
+        <Button Grid.Column="4" Grid.Row="1" Name="changePlayerButton" Content="Change Starting Player" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" Width="235" Height="70" Click="ChangePlayerButtonClick" KeyboardNavigation.TabIndex="12" ToolTip="Switch the starting player"/>
 
 
 

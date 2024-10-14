@@ -1,4 +1,10 @@
-﻿using System;
+﻿/*
+ * Program: Tic Tac Toe
+ * Name: Antonino Tancinco
+ * Date: September 30 2024
+ */
+
+using System;
 using System.Reflection.Metadata;
 using System.Text;
 using System.Text.Json.Serialization.Metadata;
@@ -36,6 +42,24 @@ namespace Assignment2_TicTacToe
         private string currentPlayer = Random();
 
         /// <summary>
+        /// Initalizes the main window
+        /// </summary>
+        public MainWindow()
+        {
+            InitializeComponent();
+
+            // Set the current player's turn
+            currentPlayerTextBox.Text = currentPlayer;
+
+            // Sets the labels for the choses characters for player1 and 2
+            xPlayerNameLabel.Content = "Player " + player1 + " Name:";
+            oPlayerNameLabel.Content = "Player " + player2 + " Name:";
+            xScoreLabel.Content = player1;
+            oScoreLabel.Content = player2;
+
+        }
+
+        /// <summary>
         /// Decides who starts first
         /// </summary>
         /// <returns>
@@ -66,16 +90,25 @@ namespace Assignment2_TicTacToe
         /// Switches between X and O
         /// </summary>
         /// <param name="player"></param>
-        /// <returns></returns>
+        /// <returns>
+        /// </returns>
         private static string Turn(string player)
         {
+
+            // Checks if player = X
             if (player == player1)
             {
+
+                //Switch to O
                 return player2;
+
             }
             else
             {
+
+                //Switch to X
                 return player1;
+
             }
         }
 
@@ -95,21 +128,7 @@ namespace Assignment2_TicTacToe
             if (player == player1) // X wins
             {
 
-                // Checks if the player name textbox is empty or equals X
-                if (string.IsNullOrEmpty(player1Name) || player1Name == player1)
-                {
-
-                    // Informs that the player has won
-                    MessageBox.Show(player1 + " has won the game!", "Winner");
-
-                } 
-                else
-                {
-
-                    // Informs that the player has won
-                    MessageBox.Show(player1Name + " (" +player1 + ") has won the game!", "Winner");
-
-                }
+                ShowWinnerMessage(player1, player1Name);
 
                 // Increments X Score by 1
                 player1Score++;
@@ -117,24 +136,11 @@ namespace Assignment2_TicTacToe
                 // Sends the score to Scores
                 xScoreTextBox.Text = player1Score.ToString();
 
-            } else if (player == player2)  // O wins
+            } 
+            else if (player == player2)  // O wins
             {
 
-                // Checks if the player name textbox is empty or equals O
-                if (string.IsNullOrEmpty(player2Name) || player2Name == player2)
-                {
-
-                    // Informs that the player has won
-                    MessageBox.Show(player2 + " has won the game!", "Winner");
-
-                }
-                else  // Tie
-                {
-
-                    // Informs that the player has won
-                    MessageBox.Show(player2Name + " (" + player2 + ") has won the game!", "Winner");
-
-                }
+                ShowWinnerMessage(player2, player2Name);
 
                 // Increments O Score by 1
                 player2Score++;
@@ -142,7 +148,8 @@ namespace Assignment2_TicTacToe
                 // Sends the score to Scores
                 oScoreTextBox.Text = player2Score.ToString();
 
-            } else
+            }
+            else   // Tie
             {
 
                 // Informs the game ends with a tie
@@ -156,25 +163,29 @@ namespace Assignment2_TicTacToe
             }
 
         }
+
         /// <summary>
-        /// Clears the grid
+        /// Shows the winner message depending on if a name was was provided for X or O
         /// </summary>
-        private void Clear()
+        /// <param name="player"></param>
+        /// <param name="playerName"></param>
+        private void ShowWinnerMessage(string player, string playerName)
         {
+            // Checks if the player name textbox is empty or equals X or O
+            if (string.IsNullOrEmpty(playerName) || playerName == player)
+            {
 
-            // Clears all the buttons
-            slot00.Content = "";
-            slot01.Content = "";
-            slot02.Content = "";
-            slot10.Content = "";
-            slot11.Content = "";
-            slot12.Content = "";
-            slot20.Content = "";
-            slot21.Content = "";
-            slot22.Content = "";
+                // Informs that the player has won
+                MessageBox.Show(player + " has won the game!", "Winner");
 
-            // Clears the Board Game Array
-            Array.Clear(boardGame, 0, boardGame.Length);
+            }
+            else
+            {
+
+                // Informs that the player has won
+                MessageBox.Show(playerName + " (" + player + ") has won the game!", "Winner");
+
+            }
         }
 
         /// <summary>
@@ -188,6 +199,8 @@ namespace Assignment2_TicTacToe
         /// </returns>
         private static int CheckWinner(string[,] boardGame)
         {
+
+            // Max index
             int size = 3;
 
             //Horizontal
@@ -259,20 +272,29 @@ namespace Assignment2_TicTacToe
             return 0;
         }
 
-        public MainWindow()
+        /// <summary>
+        /// Clears all 9 buttons
+        /// </summary>
+        private void Clear()
         {
-            InitializeComponent();
 
-            // Set the current player's turn
-            currentPlayerTextBox.Text = currentPlayer;
+            // Clears all the buttons
+            slot00.Content = "";
+            slot01.Content = "";
+            slot02.Content = "";
+            slot10.Content = "";
+            slot11.Content = "";
+            slot12.Content = "";
+            slot20.Content = "";
+            slot21.Content = "";
+            slot22.Content = "";
 
-
-            xPlayerNameLabel.Content = "Player " + player1 + " Name:";
-            oPlayerNameLabel.Content = "Player " + player2 + " Name:";
+            // Clears the Board Game Array
+            Array.Clear(boardGame, 0, boardGame.Length);
         }
 
         /// <summary>
-        /// Will Execute regardless of which 9 buttons are pressed
+        /// Will Execute regardless of which 9 buttons are clicked
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -335,7 +357,7 @@ namespace Assignment2_TicTacToe
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void ResetButton_Click(object sender, RoutedEventArgs e)
+        private void ResetButtonClick(object sender, RoutedEventArgs e)
         {
 
             // Clears all 9 buttons
@@ -360,7 +382,7 @@ namespace Assignment2_TicTacToe
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void ExitButton_Click(object sender, RoutedEventArgs e)
+        private void ExitButtonClick(object sender, RoutedEventArgs e)
         {
 
             // Closes the program
@@ -372,7 +394,7 @@ namespace Assignment2_TicTacToe
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void ChangePlayerButton_Click(object sender, RoutedEventArgs e)
+        private void ChangePlayerButtonClick(object sender, RoutedEventArgs e)
         {
 
             // Changes the current player
